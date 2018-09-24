@@ -1,0 +1,22 @@
+<div *ngIf="!producto">
+	<p>Cargando producto...</p>
+</div>
+<div class="row" *ngIf="producto">
+	<div class="col-lg-8 offset-lg-2">
+		<div class="row">
+			<div class="col-lg-6">
+				<div *ngIf="producto.imagen">
+			  		<img class="producto_imagen card-img-top" src="http://localhost/myapp-backend/uploads/{{producto.imagen}}" alt="Imagen de Producto">
+			  	</div>
+				<div *ngIf="!producto.imagen">
+			  		<img class="producto_imagen card-img-top" src="http://localhost/myapp-backend/uploads/noimage.png" alt="No image">
+			  	</div>
+			</div>  	
+			<div class="col-lg-4 offset-lg-1">
+				<h3>{{producto.nombre}}</h3>
+				<p><strong>{{producto.precio}} €</strong></p>
+				<p>{{producto.descripcion}}</p>
+			</div>
+		</div>
+	</div>
+</div>
